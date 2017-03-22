@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metattributes>
+    <aliases>
+        <for>NumberOfInstances</for>
+        <alias>InstanceCount</alias>
+    </aliases>
+    <aliases>
+        <for>NumberOfFeatures</for>
+        <alias>NumAttributes</alias>
+    </aliases>
+    <aliases>
+        <for>NumberOfClasses</for>
+        <alias>ClassCount</alias>
+    </aliases>
+    <aliases>
+        <for>NumberOfInstancesWithMissingValues</for>
+        <alias>NumMissingValues</alias>
+    </aliases>
+    <aliases>
+        <for>MajorityClassSize</for>
+        <alias></alias>
+    </aliases>
+    <aliases>
+        <for>MinorityClassSize</for>
+        <alias></alias>
+    </aliases>
+</metattributes>

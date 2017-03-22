@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+
+<TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+
+    <tabs>
+        <Tab closable="false" text="Algorithms by class">
+            <content>
+                <fx:include fx:id="algorithmByClass" source="algorithmByClass.fxml" />
+            </content>
+        </Tab>
+        <Tab closable="false" text="Algorithms by version">
+            <content>
+                <fx:include fx:id="algorithmByVersion" source="algorithmByVersion.fxml" />
+            </content>
+        </Tab>
+        <Tab closable="false" text="Algorithms by parameters">
+            <content>
+                <fx:include fx:id="algorithmByParameters" source="algorithmByParameters.fxml" />
+            </content>
+        </Tab>
+        <Tab fx:id="resultTab" closable="false" text="Generated metadata">
+            <content>
+                <fx:include fx:id="results" source="results.fxml" />
+            </content>
+        </Tab>
+        <Tab fx:id="userDatasetTab" closable="false" text="User dataset">
+            <content>
+                <fx:include fx:id="userDataset" source="userDataset.fxml" />
+            </content>
+        </Tab>
+        <Tab closable="false" text="Weka">
+            <content>
+                <fx:include fx:id="weka" source="weka.fxml" />
+            </content>
+        </Tab>
+    </tabs>
+
+</TabPane>

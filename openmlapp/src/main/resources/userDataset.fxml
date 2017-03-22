@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.Region?>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.UserDatasetController">
+<bottom>
+    
+</bottom>
+   <top>
+   <VBox prefHeight="42.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+      <children>
+         <Label text="Select your dataset:">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <HBox prefHeight="42.0" prefWidth="800.0">
+            <children>
+               <Button fx:id="buttonOpen" mnemonicParsing="false" onAction="#buttonOpenClicked" text="open dataset file" />
+               <Label fx:id="labelPath" contentDisplay="CENTER" prefHeight="26.0" prefWidth="567.0" text="&lt;not selected&gt;" HBox.hgrow="ALWAYS">
+                  <font>
+                     <Font name="System Italic" size="13.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Region HBox.hgrow="ALWAYS" />
+               <Label alignment="CENTER" fx:id="labelNumberOfExtracted" text="Extracted metadata: 0"/>
+               <Region prefWidth="20.0"/>
+               <Button fx:id="buttonExtract" mnemonicParsing="false" text="Extract" onAction="#buttonExtractClicked"/>
+            </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+         </HBox>
+         <HBox prefHeight="42.0" HBox.hgrow="ALWAYS" prefWidth="800.0">
+            <children>
+               <Button onAction="#buttonOpenPathClicked" text="Select path" />
+               <Label fx:id="labelSelectedDirectory" contentDisplay="CENTER" HBox.hgrow="ALWAYS"  prefHeight="26.0" prefWidth="567.0" text="&lt;not selected&gt;">
+                  <font>
+                     <Font name="System Italic" size="13.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Region HBox.hgrow="ALWAYS" />
+               <Button text="Recommend" onAction="#recommend"/>
+            </children>
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding>
+         </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <RadioButton fx:id="radioButtonMandatory" mnemonicParsing="false" selected="true" text="extract selected metadata">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="meta" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButtonAll" mnemonicParsing="false" text="extract all possible metadata" toggleGroup="$meta">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+      </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+   </VBox>
+</top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="180.0" prefWidth="472.0" BorderPane.alignment="CENTER">
+        
+      </TableView>
+   </center>
+   <left>
+      <HBox prefHeight="160.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefWidth="210.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Available metadata" />
+                  <TextField fx:id="searchMetadataTextField" onKeyReleased="#searchMetadataTextFieldKeyUp" promptText="search..." />
+                  <ListView fx:id="availableMetadataListView" onMouseClicked="#availableMetadataMouseClicked" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefWidth="30.0" HBox.hgrow="NEVER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#buttonAddClicked" text="&gt;" />
+                  <Button mnemonicParsing="false" onAction="#buttonRemoveClicked" text="&lt;" />
+               </children>
+            </VBox>
+            <VBox prefWidth="210.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Selected metadata" />
+                  <HBox prefHeight="31.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#buttonResetClicked" text="reset">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#buttonClearClicked" text="clear">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <ListView fx:id="selectedMetadataListView" onMouseClicked="#seletecMetadataMouseClicked" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <padding>
+      <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
+   </padding>
+</BorderPane>

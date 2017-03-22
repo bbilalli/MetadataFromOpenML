@@ -1,0 +1,7 @@
+did
+name
+measure
+algorithm_class
+algorithm
+algorithm_parameters
+score

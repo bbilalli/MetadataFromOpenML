@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<?import org.controlsfx.control.*?>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="500.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.WekaController">
+
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button text="Choose file" onAction="#loadFile"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buildModelButton" text="Build model" onAction="#buildModel"/>
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <SplitPane prefHeight="400.0" minHeight="-Infinity" maxHeight="1.7976931348623157E308"  orientation="HORIZONTAL" dividerPositions="0.3">
+            <CheckListView fx:id="checkListView" prefWidth="200.0" prefHeight="400.0">
+                <contextMenu>
+                    <ContextMenu fx:id="menu">
+                        <items>
+                            <MenuItem text="Select all" onAction="#selectAllAction" />
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </CheckListView>
+            <TextArea editable="false" fx:id="logTextArea" prefWidth="500.0" prefHeight="400.0" />
+        </SplitPane>
+    </center>
+    <bottom>
+        <VBox>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <items>
+                    <VBox spacing="5.0">
+                        <HBox spacing="5.0">
+                            <Label text="Classifier: " alignment="CENTER_RIGHT" textAlignment="RIGHT" prefWidth="60.0"/>
+                            <TextField fx:id="classifier" prefWidth="300.0" promptText="Classifier"/>
+                            <TextField fx:id="classifierOptions" prefWidth="150.0" promptText="Classifier Options"/>
+                        </HBox>
+                        <HBox spacing="5.0">
+                            <Label text="Filter: "  alignment="CENTER_RIGHT" textAlignment="RIGHT" prefWidth="60.0"/>
+                            <TextField fx:id="filter" prefWidth="300.0" promptText="Filter"/>
+                            <TextField fx:id="filterOptions" prefWidth="150.0" promptText="Filter Options"/>
+                        </HBox>
+                    </VBox>
+                </items>
+            </ToolBar>
+        </VBox>
+    </bottom>
+</BorderPane>

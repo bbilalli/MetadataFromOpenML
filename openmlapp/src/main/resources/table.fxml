@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="500.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.TableController">
+<center>
+    <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="did" prefWidth="75.0" text="did" />
+            <TableColumn fx:id="dataset" prefWidth="75.0" text="dataset" />
+            <TableColumn fx:id="measure" prefWidth="75.0" text="measure" />
+            <TableColumn fx:id="score" prefWidth="75.0" text="score" />
+            <TableColumn fx:id="algorithm" prefWidth="75.0" text="algorithm" />
+        </columns>
+    </TableView>
+</center>
+<bottom>
+    <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Label text="Measure:" />
+            <ChoiceBox fx:id="measures" prefWidth="150.0">
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets></ChoiceBox>
+            <Label text="Algorithm">
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+            </Label>
+            <ChoiceBox fx:id="algorithms" prefWidth="150.0" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#loadFullMetaData" prefHeight="19.0" text="Load data" />
+        </items>
+    </ToolBar>
+</bottom>
+</BorderPane>
